@@ -1,8 +1,8 @@
 import 'reflect-metadata'
-import 'module-alias/register'
+import './config-aliases'
 import { GraphQLServer } from 'graphql-yoga'
 import { buildSchema } from 'type-graphql'
-import { CountryResolver } from '~/modules/countries/resolvers'
+import { CountryResolver } from './modules/countries/resolvers'
 import { GlobalResolver } from './modules/global/resolvers'
 import crawlerJob from './modules/global/cronjob'
 
