@@ -1,5 +1,5 @@
 {
-  "name": "outlay-api",
+  "name": "corona-monitor-api",
   "version": "1.0.0",
   "main": "src/index.ts",
   "license": "",
