@@ -7,7 +7,7 @@ async function runJob() {
   console.log('Success')
 }
 
-const cronjob = new CronJob('0 */2 * * * *', runJob)
+const cronjob = new CronJob('0 */10 * * * *', runJob)
 
 export const start = async () => {
   await runJob()
