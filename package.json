@@ -16,6 +16,7 @@
     }
   },
   "devDependencies": {
+    "@types/axios": "^0.14.0",
     "@types/bcrypt": "^3.0.0",
     "@types/cron": "1.7.2",
     "@types/dotenv": "^8.2.0",
@@ -45,6 +46,7 @@
     "@types/mongoose": "^5.7.1",
     "@types/qs": "^6.9.1",
     "axios": "^0.19.2",
+    "axios-mock-adapter": "^1.17.0",
     "bcrypt": "^3.0.8",
     "cron": "^1.8.2",
     "dotenv": "^8.2.0",
