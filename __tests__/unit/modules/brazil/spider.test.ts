@@ -1,11 +1,11 @@
 import *  as path from 'path'
-import GlobalSpider from '~/modules/global/spider'
+import BrazilSpider from '~/modules/brazil/spider'
 import { fromMockFile } from '../../../helpers/mock-crawler'
 
 const pagePath = path.join(__dirname, 'mocks', 'page.html')
 
 describe('[Unit]:: Global', () => {
-  it('deve retornar os dados do globais corretamente', () => {
+  it('deve retornar os dados do Brazil corretamente', () => {
     const { document } = fromMockFile(pagePath)
     const {
       totalCases,
@@ -13,12 +13,13 @@ describe('[Unit]:: Global', () => {
       totalRecovered,
       activeCases,
       closedCases
-    } = GlobalSpider.getData(document)
+    } = BrazilSpider.getData(document)
 
-    expect(totalCases).toBe(219.032)
-    expect(totalDeaths).toBe(8.953)
-    expect(totalRecovered).toBe(84.795)
-    expect(activeCases).toBe(125.284)
-    expect(closedCases).toBe(93.748)
+
+    expect(totalCases).toBe(529)
+    expect(totalDeaths).toBe(4)
+    expect(totalRecovered).toBe(2)
+    expect(activeCases).toBe(523)
+    expect(closedCases).toBe(6)
   })
 })

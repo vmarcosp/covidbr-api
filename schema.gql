@@ -3,6 +3,14 @@
 # !!!   DO NOT MODIFY THIS FILE BY YOURSELF   !!!
 # -----------------------------------------------
 
+type Brazil {
+  totalDeaths: Float!
+  totalCases: Float!
+  activeCases: Float!
+  totalRecovered: Float!
+  closedCases: Float!
+}
+
 type GlobalData {
   totalCases: Float!
   totalDeaths: Float!
@@ -13,4 +21,5 @@ type GlobalData {
 
 type Query {
   global: GlobalData
+  countries: Brazil
 }

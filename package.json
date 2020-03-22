@@ -24,6 +24,7 @@
     "@types/jsonwebtoken": "^8.3.7",
     "@types/lokijs": "^1.5.3",
     "@types/module-alias": "^2.0.0",
+    "@types/winston": "^2.4.4",
     "@types/ws": "^7.2.3",
     "@typescript-eslint/eslint-plugin": "^2.19.2",
     "@typescript-eslint/parser": "^2.19.2",
@@ -42,6 +43,8 @@
   },
   "dependencies": {
     "@types/mongoose": "^5.7.1",
+    "@types/qs": "^6.9.1",
+    "axios": "^0.19.2",
     "bcrypt": "^3.0.8",
     "cron": "^1.8.2",
     "dotenv": "^8.2.0",
@@ -53,8 +56,10 @@
     "lokijs": "^1.5.8",
     "module-alias": "^2.2.2",
     "mongoose": "^5.9.0",
+    "qs": "^6.9.1",
     "ramda": "^0.27.0",
     "reflect-metadata": "^0.1.13",
-    "type-graphql": "^0.17.6"
+    "type-graphql": "^0.17.6",
+    "winston": "^3.2.1"
   }
 }

@@ -108,3 +108,4 @@ dist
 *.mock.ts
 cache.json
 build/*
+*.data.json
