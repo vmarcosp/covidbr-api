@@ -2,7 +2,6 @@ import { Field, ObjectType } from 'type-graphql'
 
 @ObjectType()
 export class Brazil {
-
   @Field()
   totalDeaths: number;
 
@@ -17,5 +16,4 @@ export class Brazil {
 
   @Field()
   closedCases: number;
-
 }

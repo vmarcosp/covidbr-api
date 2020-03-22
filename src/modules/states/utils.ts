@@ -1,137 +1,140 @@
-const states = {
-  'SP': {
+export type UfAndInfo = {
+  [uf: string]: { name: string; latitude: number; longitude: number };
+}
+export const states: UfAndInfo = {
+  SP: {
     name: 'São Paulo',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'RJ': {
+  RJ: {
     name: 'Rio de Janeiro',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'ES': {
+  ES: {
     name: 'Espírito Santo',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'BA': {
+  BA: {
     name: 'Bahia',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'DF': {
+  DF: {
     name: 'Distrito Federal',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'AL': {
+  AL: {
     name: 'Alagoas',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'MG': {
+  MG: {
     name: 'Minas Gerais',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'RS': {
+  RS: {
     name: 'Rio Grande do Sul',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'PE': {
+  PE: {
     name: 'Pernambuco',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'PR': {
+  PR: {
     name: 'Paraná',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'SC': {
+  SC: {
     name: 'Santa Catarina',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'GO': {
+  GO: {
     name: 'Goiás',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'RN': {
+  RN: {
     name: 'Rio Grande do Norte',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'AM': {
+  AM: {
     name: 'Amazonas',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'MS': {
+  MS: {
     name: 'Mato Grosso do Sul',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'SE': {
+  SE: {
     name: 'Sergipe',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'CE': {
+  CE: {
     name: 'Ceará',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'AC': {
+  AC: {
     name: 'Acre',
-    lat: -9.070003236,
-    lng: -68.66997929
+    latitude: -9.070003236,
+    longitude: -68.66997929
   },
-  'MT': {
+  MT: {
     name: 'Mato Grosso',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'TO': {
+  TO: {
     name: 'Tocantins',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'PA': {
+  PA: {
     name: 'Pará',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'PB': {
+  PB: {
     name: 'Paraíba',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'PI': {
+  PI: {
     name: 'Piauí',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'RO': {
+  RO: {
     name: 'Roraima',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'AP': {
+  AP: {
     name: 'Amapá',
-    lat: -0.039598369,
-    lng: -51.17998743
+    latitude: -0.039598369,
+    longitude: -51.17998743
   },
-  'MA': {
+  MA: {
     name: 'Maranhão',
-    lat: -9.48000405,
-    lng: -35.83996769
+    latitude: -9.48000405,
+    longitude: -35.83996769
   },
-  'RR': {
+  RR: {
     name: 'Roraima',
-    lat: -9.48000405,
-    lng: -35.83996769
-  },
+    latitude: -9.48000405,
+    longitude: -35.83996769
+  }
 }

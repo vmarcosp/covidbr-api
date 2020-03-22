@@ -1,6 +1,5 @@
 import { JSDOM } from 'jsdom'
-const { curry, prop } = require('ramda')
-
+import { curry, prop } from 'ramda'
 export const WORLD_METER_URL = 'https://www.worldometers.info/coronavirus/'
 
 export const fromURL = async (URL: string) => {

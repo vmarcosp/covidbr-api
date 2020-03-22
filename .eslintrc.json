@@ -21,6 +21,6 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "@typescript-eslint/interface-name-prefix": "always"
+        "@typescript-eslint/interface-name-prefix": "warn"
     }
 }

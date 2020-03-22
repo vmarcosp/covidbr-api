@@ -1,5 +1,5 @@
 import qs from 'qs'
-const R = require('ramda')
+import R from 'ramda'
 
 export enum CaseType {
   DISCARDED = 'Caso_Descartado',
@@ -7,12 +7,12 @@ export enum CaseType {
   CONFIRMED = 'Caso_Confirmado'
 }
 
-const baseUrl = `https://services.arcgis.com/4CZwpdWHGNPLU7QQ/arcgis/rest/services/Estados_Corona/FeatureServer/0/query?f=json`
+const baseUrl = 'https://services.arcgis.com/4CZwpdWHGNPLU7QQ/arcgis/rest/services/Estados_Corona/FeatureServer/0/query?f=json'
 
 const defaultParams = {
   returnGeometry: true,
   spatialRel: 'esriSpatialRelIntersects',
-  outFields: '*',
+  outFields: '*'
 }
 
 export const createUrl = (type: CaseType) => {

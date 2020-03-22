@@ -1,5 +1,5 @@
-import { fromURL, WORLD_METER_URL } from "~/common/spider"
-import { BrazilCollection } from "~/config/database"
+import { fromURL, WORLD_METER_URL } from '~/common/spider'
+import { BrazilCollection } from '~/config/database'
 
 import BrazilSpider from './spider'
 

@@ -1,6 +1,6 @@
-import { fromURL, WORLD_METER_URL } from "~/common/spider"
+import { fromURL, WORLD_METER_URL } from '~/common/spider'
 import GlobalSpider from './spider'
-import { GlobalCollection } from "~/config/database"
+import { GlobalCollection } from '~/config/database'
 
 export const findAndStoreData = async () => {
   const { document } = await fromURL(WORLD_METER_URL)

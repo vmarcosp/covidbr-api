@@ -3,7 +3,7 @@ import { logger } from '~/common/logger'
 
 import { findAndStoreData } from './service'
 
-async function runJob() {
+async function runJob () {
   logger.info('Buscando dados globais')
   await findAndStoreData()
   logger.info('Dados globais armazenados com sucesso')

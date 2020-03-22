@@ -22,4 +22,22 @@ type GlobalData {
 type Query {
   global: GlobalData
   brazil: Brazil
+  state(filter: StateFilterInput!): State
+  states(filter: StateFilterInput!): [State!]
+}
+
+type State {
+  uf: String!
+  name: String!
+  latitude: Float!
+  longitude: Float!
+  cases: Float!
+  casesMS: Float!
+  casesNotConfirmedByMS: Float!
+  deaths: Float!
+}
+
+input StateFilterInput {
+  name: String
+  uf: String
 }

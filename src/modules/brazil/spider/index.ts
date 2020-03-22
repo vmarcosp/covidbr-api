@@ -1,15 +1,15 @@
 import { COUNTRIES } from './selectors'
 import { text } from '~/common/spider'
-const R = require('ramda')
+import R from 'ramda'
 
 const floatOfString = R.pipe(
-  R.defaultTo('0'),
+  R.defaultTo('0') as any,
   R.replace(',', '.'),
   parseFloat
 )
 
 const formatColumnData = R.pipe(
-  text,
+  text as (a: any) => string,
   R.trim,
   floatOfString
 )
@@ -37,6 +37,5 @@ export const getData = (document: Document) => {
     closedCases: totalDeaths + totalRecovered
   }
 }
-
 
 export default { getData }

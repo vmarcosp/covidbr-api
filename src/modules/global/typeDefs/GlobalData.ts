@@ -4,12 +4,16 @@ import { Field, ObjectType } from 'type-graphql'
 export class GlobalData {
   @Field()
   totalCases: number;
+
   @Field()
   totalDeaths: number;
+
   @Field()
   totalRecovered: number;
+
   @Field()
   activeCases: number;
+
   @Field()
   closedCases: number;
 }

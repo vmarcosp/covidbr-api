@@ -1,6 +1,6 @@
 import { text, querySelectorAll } from '~/common/spider'
 import { GLOBAL_COUNTERS, COUNTERS } from './selectors'
-const R = require('ramda')
+import R from 'ramda'
 
 const floatOfString = R.pipe(
   R.replace(',', '.'),
@@ -8,7 +8,7 @@ const floatOfString = R.pipe(
 )
 
 const formatCounter = R.pipe(
-  text,
+  text as (a: any) => string,
   R.trim,
   floatOfString
 )

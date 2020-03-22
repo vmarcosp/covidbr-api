@@ -1,11 +1,11 @@
 import { CronJob } from 'cron'
 import { logger } from '~/common/logger'
-import { findAndStoreData } from './service'
+import { findAndStoreStatesData } from './services/update-states-data'
 
 async function runJob () {
-  logger.info('Buscando informarções do Brasil')
-  await findAndStoreData()
-  logger.info('Informações do Brasil armazenadas com sucesso')
+  logger.info('Buscando dados estaduais')
+  await findAndStoreStatesData()
+  logger.info('Dados estaduais armazenados com sucesso')
 }
 
 const cronjob = new CronJob('0 */10 * * * *', runJob)
