@@ -1,17 +1,6 @@
-import { text, querySelectorAll } from '~/common/spider'
+import { querySelectorAll } from '~/common/spider'
 import { GLOBAL_COUNTERS, COUNTERS } from './selectors'
-import R from 'ramda'
-
-const floatOfString = R.pipe(
-  R.replace(',', '.'),
-  parseFloat
-)
-
-const formatCounter = R.pipe(
-  text as (a: any) => string,
-  R.trim,
-  floatOfString
-)
+import { formatCounter } from '~/common/normalization'
 
 const getGlobalCounters = querySelectorAll(GLOBAL_COUNTERS)
 const getCounters = querySelectorAll(COUNTERS)

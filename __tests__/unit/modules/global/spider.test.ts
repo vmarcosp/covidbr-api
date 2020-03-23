@@ -15,10 +15,10 @@ describe('[Unit]:: Global', () => {
       closedCases
     } = GlobalSpider.getData(document)
 
-    expect(totalCases).toBe(219.032)
-    expect(totalDeaths).toBe(8.953)
-    expect(totalRecovered).toBe(84.795)
-    expect(activeCases).toBe(125.284)
-    expect(closedCases).toBe(93.748)
+    expect(totalCases).toBe(219032)
+    expect(totalDeaths).toBe(8953)
+    expect(totalRecovered).toBe(84795)
+    expect(activeCases).toBe(125284)
+    expect(closedCases).toBe(93748)
   })
 })

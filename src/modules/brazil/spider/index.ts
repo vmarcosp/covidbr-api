@@ -1,18 +1,5 @@
 import { COUNTRIES } from './selectors'
-import { text } from '~/common/spider'
-import R from 'ramda'
-
-const floatOfString = R.pipe(
-  R.defaultTo('0') as any,
-  R.replace(',', '.'),
-  parseFloat
-)
-
-const formatColumnData = R.pipe(
-  text as (a: any) => string,
-  R.trim,
-  floatOfString
-)
+import { formatCounter } from '~/common/normalization'
 
 export const getData = (document: Document) => {
   const rows = document.querySelectorAll(COUNTRIES)
@@ -26,13 +13,13 @@ export const getData = (document: Document) => {
 
   const [, $totalCases, , $totalDeaths, , $totalRecovered, $activeCases] = Array.from(brazilRow.querySelectorAll('td'))
 
-  const totalDeaths = formatColumnData($totalDeaths)
-  const totalRecovered = formatColumnData($totalRecovered)
+  const totalDeaths = formatCounter($totalDeaths)
+  const totalRecovered = formatCounter($totalRecovered)
 
   return {
     totalDeaths,
-    totalCases: formatColumnData($totalCases),
-    activeCases: formatColumnData($activeCases),
+    totalCases: formatCounter($totalCases),
+    activeCases: formatCounter($activeCases),
     totalRecovered,
     closedCases: totalDeaths + totalRecovered
   }
