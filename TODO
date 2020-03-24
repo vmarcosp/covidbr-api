@@ -26,4 +26,4 @@ Chore:
   ✔ Unificar os cronjobs - 1 @done(20-03-24 19:56)
   ☐ Renomear utils para um nome adequado - 1
   ☐ Mover as collections para seus respectivos modulos - 1
-  ☐ Mudar a cronjob para rodar de 1h em 1h
+  ✔ Mudar a cronjob para rodar de 1h em 1h @done(20-03-24 20:18)
