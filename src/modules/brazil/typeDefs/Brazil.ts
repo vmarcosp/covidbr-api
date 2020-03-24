@@ -3,17 +3,17 @@ import { Field, ObjectType } from 'type-graphql'
 @ObjectType()
 export class Brazil {
   @Field()
-  totalDeaths: number;
+  totalDeaths: number
 
   @Field()
-  totalCases: number;
+  totalCases: number
 
   @Field()
-  activeCases: number;
+  activeCases: number
 
   @Field()
-  totalRecovered: number;
+  totalRecovered: number
 
   @Field()
-  closedCases: number;
+  closedCases: number
 }

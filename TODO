@@ -23,7 +23,7 @@ Cidades:
 Chore:
   ☐ Criar documentação do projeto (README.md) - 1
   ☐ Renomear spiders para crawler - 1
-  ☐ Unificar os cronjobs - 1
+  ✔ Unificar os cronjobs - 1 @done(20-03-24 19:56)
   ☐ Renomear utils para um nome adequado - 1
   ☐ Mover as collections para seus respectivos modulos - 1
   ☐ Mudar a cronjob para rodar de 1h em 1h
