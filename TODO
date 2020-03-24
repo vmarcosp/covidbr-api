@@ -1,0 +1,28 @@
+Estados:
+  ☐ Corrigir filtro por nome na query de `states` - 1
+  ☐ Mover para `queries.ts` a busca por estado que hoje chama diretamente a collection
+
+Cidades:
+  ☐ Adicionar collection de cidades - 1
+  ☐ Criar função para buscar as cidades a partir do csv
+  ☐ Adicionar ao cronjob
+  ☐ Adicionar a query por cidade
+    - filtro: {
+       name: string
+       uf: string
+    }
+  ☐ Adicionar typeDef da cidade
+    -> {
+      deaths: number
+      cases: number
+      casesMs: number
+      casesNotConfirmedByMs: number
+      uf: string
+    } 
+ 
+Chore:
+  ☐ Criar documentação do projeto (README.md) - 1
+  ☐ Renomear spiders para crawler - 1
+  ☐ Unificar os cronjobs - 1
+  ☐ Renomear utils para um nome adequado - 1
+  ☐ Mover as collections para seus respectivos modulos - 1

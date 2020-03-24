@@ -1,24 +1,15 @@
 import axios from 'axios'
 import Papa from 'papaparse'
 import { states } from '~/modules/states/utils'
+import { State } from '../typeDefs/State'
 
 const URL = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-total.csv'
+
 interface StateDataCsv {
   state: string;
   totalCases: string;
   totalCasesMS: string;
   notConfirmedByMS: string;
-  deaths: string;
-}
-
-interface State {
-  uf: string;
-  name: string;
-  latitude: number;
-  longitude: number;
-  cases: string;
-  casesMS: string;
-  casesNotConfirmedByMS: string;
   deaths: string;
 }
 

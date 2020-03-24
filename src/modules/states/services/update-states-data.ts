@@ -5,7 +5,6 @@ export const findAndStoreStatesData = async (): Promise<void> => {
   const states = await getStatesData()
 
   StatesCollection.clear()
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  StatesCollection.insert(states as unknown as any)
+  StatesCollection.insert(states)
   db.saveDatabase()
 }

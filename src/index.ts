@@ -9,10 +9,11 @@ import globalCralwerJob from './modules/global/cronjob'
 import brazilCrawlerJob from './modules/brazil/cronjob'
 import statesCrawlerJob from './modules/states/cronjob'
 
-async function run () {
+async function run() {
   await globalCralwerJob.start()
   await brazilCrawlerJob.start()
   await statesCrawlerJob.start()
+
   const schema = await buildSchema({
     resolvers: [GlobalResolver, BrazilResolver, StateResolver],
     emitSchemaFile: true,
