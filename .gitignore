@@ -104,6 +104,7 @@ dist
 .tern-port
 
 # Stores VSCode versions used for testing VSCode extensions
+.vscode
 .vscode-test
 *.mock.ts
 cache.json

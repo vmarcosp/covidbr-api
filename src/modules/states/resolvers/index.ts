@@ -14,7 +14,7 @@ export class StateResolver {
   }
 
   @Query(() => [State], { nullable: true })
-  async states(@Arg('filter') filter?: StateFilterInput): Promise<State[]> {
+  async states(@Arg('filter', { nullable: true }) filter?: StateFilterInput): Promise<State[]> {
     return findStates(fromNullable(filter))
   }
 }
