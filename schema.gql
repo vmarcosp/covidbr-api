@@ -18,6 +18,8 @@ type City {
   casesMS: Float!
   casesNotConfirmedByMS: Float!
   deaths: Float!
+  latitude: Float!
+  longitude: Float!
 }
 
 input CityFilterInput {

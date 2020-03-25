@@ -19,4 +19,10 @@ export class City {
 
   @Field()
   deaths: number
+
+  @Field()
+  latitude: number
+
+  @Field()
+  longitude: number
 }

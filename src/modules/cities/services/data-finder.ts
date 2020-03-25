@@ -3,6 +3,7 @@ import Papa from 'papaparse'
 
 import { logger } from '~/common/logger'
 import { db } from '~/config/database'
+import data from '../cities-geolocation.json'
 
 import { City } from '../typeDefs/City'
 import { CitiesCollection } from '../collection'
@@ -21,16 +22,43 @@ interface CityCsvRow {
   totalCases: string
 }
 
+interface CityInfo {
+  uf: string
+  name: string
+  latitude: number
+  longitude: number
+}
+
+const citiesGeolocation = data as CityInfo[]
+
 const toCityName = (value: string) => value.split('/')[0]
 
-const createCity = ({ city, totalCases, state }: CityCsvRow): City => ({
-  cases: parseInt(totalCases),
-  casesMS: parseInt(totalCases),
-  uf: state,
-  name: toCityName(city),
-  deaths: 0,
-  casesNotConfirmedByMS: 0
-})
+const getCityInfo = (cityName: string, uf: string) => {
+  const info = citiesGeolocation.find((city: CityInfo) => city.name === cityName && city.uf === uf)
+
+  if (info) return info
+
+  return {
+    latitude: 0,
+    longitude: 0
+  }
+}
+
+const createCity = ({ city, totalCases, state }: CityCsvRow): City => {
+  const name = toCityName(city)
+  const { latitude, longitude } = getCityInfo(name, state)
+
+  return {
+    cases: parseInt(totalCases),
+    casesMS: parseInt(totalCases),
+    uf: state,
+    name,
+    deaths: 0,
+    casesNotConfirmedByMS: 0,
+    latitude,
+    longitude
+  }
+}
 
 export const findAndStoreCities = async () => {
   try {
@@ -42,8 +70,9 @@ export const findAndStoreCities = async () => {
     await CitiesCollection.clear()
     await CitiesCollection.insert(cities)
     await db.saveDatabase()
+
     logger.info('Dados municipais armazenados com sucesso')
   } catch (error) {
-    logger.error('Erro ao tentar atualizar os dados das cidades')
+    logger.error('Erro ao tentar atualizar os dados municipais', error)
   }
 }
