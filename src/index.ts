@@ -1,3 +1,4 @@
+import 'dotenv/config'
 import 'reflect-metadata'
 import './config-aliases'
 import { GraphQLServer } from 'graphql-yoga'
@@ -18,7 +19,11 @@ async function run() {
 
   const server = new GraphQLServer({ schema })
 
-  server.start(() => console.log('Server is running at http://localhost:4000/'))
+  const port = process.env.PORT || 4000
+  server.start(
+    { port },
+    () => console.log(`Server is running at http://localhost:${port}`)
+  )
 }
 
 run()
