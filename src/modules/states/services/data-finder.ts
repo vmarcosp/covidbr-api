@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Papa from 'papaparse'
-import { states } from '~/modules/states/utils'
+import { states } from '~/modules/states/states-informations'
 import { State } from '../typeDefs/State'
 
 const URL = 'https://raw.githubusercontent.com/wcota/covid19br/master/cases-brazil-total.csv'

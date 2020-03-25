@@ -2,7 +2,7 @@ import { logger } from '~/common/logger'
 import { fromURL, WORLD_METER_URL } from '~/common/spider'
 import { BrazilCollection } from '~/config/database'
 
-import BrazilSpider from './spider'
+import BrazilSpider from './crawler'
 
 export const findAndStoreData = async () => {
   logger.info('Buscando informarções do Brasil')

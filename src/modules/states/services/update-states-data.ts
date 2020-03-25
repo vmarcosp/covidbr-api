@@ -1,5 +1,5 @@
 import { StatesCollection, db } from '~/config/database'
-import { getStatesData } from './finder'
+import { getStatesData } from './data-finder'
 import { logger } from '~/common/logger'
 
 export const findAndStoreData = async () => {

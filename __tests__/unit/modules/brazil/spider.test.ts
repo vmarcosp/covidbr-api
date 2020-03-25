@@ -1,5 +1,5 @@
-import *  as path from 'path'
-import BrazilSpider from '~/modules/brazil/spider'
+import path from 'path'
+import BrazilCrawler from '~/modules/brazil/crawler'
 import { fromMockFile } from '../../../helpers/mock-crawler'
 
 const pagePath = path.join(__dirname, 'mocks', 'page.html')
@@ -13,8 +13,7 @@ describe('[Unit]:: Global', () => {
       totalRecovered,
       activeCases,
       closedCases
-    } = BrazilSpider.getData(document)
-
+    } = BrazilCrawler.getData(document)
 
     expect(totalCases).toBe(529)
     expect(totalDeaths).toBe(4)
