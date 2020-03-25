@@ -1,6 +1,6 @@
 import { Query, Resolver } from 'type-graphql'
 import { GlobalData } from '../typeDefs/GlobalData'
-import { GlobalCollection } from '~/config/database'
+import { GlobalCollection } from '../collection'
 
 @Resolver(() => GlobalData)
 export class GlobalResolver {

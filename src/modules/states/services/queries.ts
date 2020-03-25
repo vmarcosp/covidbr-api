@@ -1,6 +1,6 @@
 import { Option, fold } from 'fp-ts/lib/Option'
 import { StateFilterInput } from '../typeDefs/StateFilterInput'
-import { StatesCollection } from '~/config/database'
+import { StatesCollection } from '../collection'
 
 const createQuery = fold(
   () => ({}),
