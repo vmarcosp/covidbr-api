@@ -34,6 +34,7 @@ const createCity = ({ city, totalCases, state }: CityCsvRow): City => ({
 
 export const findAndStoreCities = async () => {
   try {
+    logger.info('Buscando dados municipais')
     const { data } = await axios.get(URL)
     const { data: citiesCsv } = Papa.parse(data, parserConfig)
     const cities = citiesCsv.map(createCity)
@@ -41,6 +42,7 @@ export const findAndStoreCities = async () => {
     await CitiesCollection.clear()
     await CitiesCollection.insert(cities)
     await db.saveDatabase()
+    logger.info('Dados municipais armazenados com sucesso')
   } catch (error) {
     logger.error('Erro ao tentar atualizar os dados das cidades')
   }

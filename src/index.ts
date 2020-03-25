@@ -6,13 +6,14 @@ import { buildSchema } from 'type-graphql'
 import { GlobalResolver } from './modules/global/resolvers'
 import { BrazilResolver } from './modules/brazil/resolvers'
 import { StateResolver } from './modules/states/resolvers'
+import { CityResolver } from './modules/cities/resolvers'
 import cralwerJob from './cronjob'
 
-async function run() {
+async function run () {
   await cralwerJob.start()
 
   const schema = await buildSchema({
-    resolvers: [GlobalResolver, BrazilResolver, StateResolver],
+    resolvers: [GlobalResolver, BrazilResolver, StateResolver, CityResolver],
     emitSchemaFile: true,
     validate: false
   })

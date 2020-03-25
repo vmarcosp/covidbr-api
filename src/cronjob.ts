@@ -1,12 +1,14 @@
 import { CronJob } from 'cron'
-import { findAndStoreData as handleBrazilData } from './modules/brazil/service'
-import { findAndStoreData as handleGlobalData } from './modules/global/service'
-import { findAndStoreData as handleStatesData } from './modules/states/services/update-states-data'
+import { findAndStoreData as handleBrazilCrawler } from './modules/brazil/service'
+import { findAndStoreData as handleGlobalCrawler } from './modules/global/service'
+import { findAndStoreCities as handleCitiesDataFinder } from './modules/cities/services/data-finder'
+import { findAndStoreData as handleStatesDataFinder } from './modules/states/services/update-states-data'
 
 const runJob = () => Promise.all([
-  handleGlobalData(),
-  handleBrazilData(),
-  handleStatesData()
+  handleGlobalCrawler(),
+  handleBrazilCrawler(),
+  handleStatesDataFinder(),
+  handleCitiesDataFinder()
 ])
 
 const cronjob = new CronJob('0 0 */1 * * *', runJob)

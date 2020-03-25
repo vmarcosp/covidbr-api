@@ -11,6 +11,20 @@ type Brazil {
   closedCases: Float!
 }
 
+type City {
+  uf: String!
+  name: String!
+  cases: Float!
+  casesMS: Float!
+  casesNotConfirmedByMS: Float!
+  deaths: Float!
+}
+
+input CityFilterInput {
+  name: String
+  uf: String
+}
+
 type GlobalData {
   totalCases: Float!
   totalDeaths: Float!
@@ -23,6 +37,7 @@ type Query {
   global: GlobalData
   brazil: Brazil
   states(filter: StateFilterInput): [State!]
+  city(filter: CityFilterInput): City
 }
 
 type State {

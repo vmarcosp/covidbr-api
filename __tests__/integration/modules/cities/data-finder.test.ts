@@ -48,38 +48,3 @@ describe('[Integration]:: Cities - DataFinder', () => {
     })
   })
 })
-
-// const result = [
-//   casesMS: 366,
-//   casesNotConfirmedByMS: 0,
-//   deaths: 0,
-//   name: 'São Paulo',
-//   uf: 'SP'
-// },
-// {
-//   $loki: 2,
-//   cases: 1,
-//   casesMS: 1,
-//   casesNotConfirmedByMS: 0,
-//   deaths: 0,
-//   meta: {
-//     created: 1585115626644,
-//     revision: 0,
-//     version: 0
-//   },
-//   name: 'Barra Mansa',
-//   uf: 'RJ'
-// }, {
-//   $loki: 3,
-//   cases: 17,
-//   casesMS: 17,
-//   casesNotConfirmedByMS: 0,
-//   deaths: 0,
-//   meta: {
-//     created: 1585115626644,
-//     revision: 0,
-//     version: 0
-//   },
-//   name: 'Vila Velha',
-//   uf: 'ES'
-// }]
