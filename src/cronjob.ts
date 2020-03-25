@@ -11,7 +11,7 @@ const runJob = () => Promise.all([
   handleCitiesDataFinder()
 ])
 
-const cronjob = new CronJob('0 0 */1 * * *', runJob)
+const cronjob = new CronJob('0 */10 * * * *', runJob)
 
 export const start = async () => {
   await runJob()
