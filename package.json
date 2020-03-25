@@ -27,6 +27,7 @@
     "@types/lokijs": "^1.5.3",
     "@types/module-alias": "^2.0.0",
     "@types/papaparse": "^5.0.3",
+    "@types/uuid": "^7.0.2",
     "@types/winston": "^2.4.4",
     "@types/ws": "^7.2.3",
     "@typescript-eslint/eslint-plugin": "^2.25.0",
@@ -70,6 +71,7 @@
     "ramda": "^0.27.0",
     "reflect-metadata": "^0.1.13",
     "type-graphql": "^0.17.6",
+    "uuid": "^7.0.2",
     "winston": "^3.2.1"
   }
 }

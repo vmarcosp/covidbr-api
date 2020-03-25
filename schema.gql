@@ -12,6 +12,7 @@ type Brazil {
 }
 
 type City {
+  id: String!
   uf: String!
   name: String!
   cases: Float!
@@ -23,6 +24,7 @@ type City {
 }
 
 input CityFilterInput {
+  id: String
   name: String
   uf: String
 }
@@ -35,12 +37,18 @@ type GlobalData {
   closedCases: Float!
 }
 
+input PaginationInput {
+  offset: Float!
+  first: Float!
+}
+
 type Query {
   global: GlobalData
   brazil: Brazil
-  states(filter: StateFilterInput): [State!]
+  states(pagination: PaginationInput, filter: StateFilterInput): [State!]
+  state(filter: StateFilterInput): State
   city(filter: CityFilterInput): City
-  cities(filter: CityFilterInput): [City!]
+  cities(pagination: PaginationInput, filter: CityFilterInput): [City!]
 }
 
 type State {

@@ -3,6 +3,9 @@ import { Field, ObjectType } from 'type-graphql'
 @ObjectType()
 export class City {
   @Field()
+  id: string
+
+  @Field()
   uf: string
 
   @Field()

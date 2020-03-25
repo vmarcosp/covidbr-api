@@ -1,5 +1,6 @@
 import axios from 'axios'
 import Papa from 'papaparse'
+import uuid from 'uuid/v4'
 
 import { logger } from '~/common/logger'
 import { db } from '~/config/database'
@@ -49,6 +50,7 @@ const createCity = ({ city, totalCases, state }: CityCsvRow): City => {
   const { latitude, longitude } = getCityInfo(name, state)
 
   return {
+    id: uuid(),
     cases: parseInt(totalCases),
     casesMS: parseInt(totalCases),
     uf: state,
