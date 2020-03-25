@@ -1,7 +1,8 @@
 import { fromURL, WORLD_METER_URL } from '~/common/spider'
+
 import GlobalSpider from './crawler'
-import { GlobalCollection } from '~/config/database'
 import { logger } from '~/common/logger'
+import { GlobalCollection } from './collection'
 
 export const findAndStoreData = async () => {
   logger.info('Buscando dados globais')

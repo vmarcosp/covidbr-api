@@ -1,8 +1,6 @@
-import { logger } from '~/common/logger'
-import { db } from '~/config/database'
-
+import { StatesCollection, db } from '~/config/database'
 import { getStatesData } from './data-finder'
-import { StatesCollection } from '../collection'
+import { logger } from '~/common/logger'
 
 export const findAndStoreData = async () => {
   logger.info('Buscando dados estaduais')
