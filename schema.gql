@@ -22,7 +22,6 @@ type GlobalData {
 type Query {
   global: GlobalData
   brazil: Brazil
-  state: State
   states(filter: StateFilterInput): [State!]
 }
 

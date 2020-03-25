@@ -17,6 +17,7 @@ export const getStatesData = async (): Promise<State[]> => {
   const response = await axios.get(URL)
   const { data } = Papa.parse(response.data, { header: true, skipEmptyLines: true })
   const [, ...dataWithoutTotal] = data
+
   return dataWithoutTotal
     .map((stateData: StateDataCsv) => {
       const { state, totalCases, totalCasesMS, notConfirmedByMS, deaths } = stateData
@@ -31,6 +32,6 @@ export const getStatesData = async (): Promise<State[]> => {
         casesMS: parseInt(totalCasesMS),
         casesNotConfirmedByMS: parseInt(notConfirmedByMS),
         deaths: parseInt(deaths)
-      } as unknown as State
+      }
     })
 }

@@ -7,12 +7,13 @@
     "dev": "NODE_ENV=dev nodemon src/index.ts",
     "build": "tsc --build",
     "start": "node build/index.js",
-    "lint": "tslint --project tsconfig.json --config tslint.json",
+    "lint": "eslint --fix src/**/*",
     "test": "NODE_ENV=test jest"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "eslint src/**/*.ts --fix"
+      "pre-commit": "yarn lint",
+      "pre-push": "yarn test"
     }
   },
   "devDependencies": {
@@ -28,12 +29,20 @@
     "@types/papaparse": "^5.0.3",
     "@types/winston": "^2.4.4",
     "@types/ws": "^7.2.3",
+    "@typescript-eslint/eslint-plugin": "^2.25.0",
+    "@typescript-eslint/parser": "^2.25.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
+    "eslint-plugin-standard": "^4.0.1",
     "husky": "^4.2.3",
     "nodemon": "^2.0.2",
     "sucrase": "^3.12.1",
     "ts-jest": "^25.2.0",
     "ts-node": "^8.6.2",
-    "tslint": "^6.1.0",
     "typescript": "^3.7.5"
   },
   "dependencies": {

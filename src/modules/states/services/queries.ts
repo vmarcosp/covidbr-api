@@ -1,27 +1,19 @@
-import { Option, fold, isSome } from "fp-ts/lib/Option"
-import { StateFilterInput } from "../typeDefs/StateFilterInput"
-import { StatesCollection } from "~/config/database"
-import { State } from '../typeDefs/State'
+import { Option, fold } from 'fp-ts/lib/Option'
+import { StateFilterInput } from '../typeDefs/StateFilterInput'
+import { StatesCollection } from '~/config/database'
 
-const filterByName = (filter: string) => ({ name }: State) => (
-  name
-    .toLowerCase()
-    .includes(filter.toLowerCase())
-)
-
-const createQuery = fold<StateFilterInput, Object>(
+const createQuery = fold(
   () => ({}),
-  (a: StateFilterInput) => ({ uf: a.uf })
+  ({ uf, name }: StateFilterInput) => ({
+    name: { $regex: [name, 'i'] },
+    uf: { $regex: [uf, 'i'] }
+  })
 )
 
 export const findStates = (filter: Option<StateFilterInput>) => {
   const query = createQuery(filter)
 
-  const states = StatesCollection.find(query)
-
-  return isSome(filter) && filter.value.name
-    ? states.filter(filterByName(filter.value.name))
-    : states
+  return StatesCollection.find(query)
 }
 
 export default { findStates }
