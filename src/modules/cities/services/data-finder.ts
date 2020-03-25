@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Papa from 'papaparse'
-import uuid from 'uuid/v4'
+import { v4 as uuidV4 } from 'uuid'
 
 import { logger } from '~/common/logger'
 import { db } from '~/config/database'
@@ -50,7 +50,7 @@ const createCity = ({ city, totalCases, state }: CityCsvRow): City => {
   const { latitude, longitude } = getCityInfo(name, state)
 
   return {
-    id: uuid(),
+    id: uuidV4(),
     cases: parseInt(totalCases),
     casesMS: parseInt(totalCases),
     uf: state,
@@ -61,13 +61,19 @@ const createCity = ({ city, totalCases, state }: CityCsvRow): City => {
     longitude
   }
 }
+const treatData = (cityRow: CityCsvRow): boolean => {
+  const name = toCityName(cityRow.city)
+  return !['NÃO ESPECIFICADA', 'NAO ESPECIFICADA'].includes(name.toUpperCase())
+}
 
 export const findAndStoreCities = async () => {
   try {
     logger.info('Buscando dados municipais')
     const { data } = await axios.get(URL)
     const { data: citiesCsv } = Papa.parse(data, parserConfig)
-    const cities = citiesCsv.map(createCity)
+    const cities = citiesCsv
+      .filter(treatData)
+      .map(createCity)
 
     await CitiesCollection.clear()
     await CitiesCollection.insert(cities)

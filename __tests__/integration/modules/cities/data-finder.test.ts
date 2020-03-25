@@ -4,7 +4,7 @@ import MockAdapter from 'axios-mock-adapter'
 import { findAndStoreCities } from '~/modules/cities/services/data-finder'
 import { CitiesCollection } from '~/modules/cities/collection'
 
-import { mockedCsv } from './mocks/data-finder'
+import { mockedCsv, mockeCSVCityWithUndefinedCities } from './mocks/data-finder'
 
 const mockAxios = new MockAdapter(axios)
 
@@ -50,6 +50,24 @@ describe('[Integration]:: Cities - DataFinder', () => {
         })
       ]))
 
+      done()
+    })
+
+    it('deve buscar e armazenar corretamente as cidades e ignorar as Não identificadas', async done => {
+      mockAxios.onGet(URL).reply(200, mockeCSVCityWithUndefinedCities)
+      await findAndStoreCities()
+
+      const cities = await CitiesCollection.find()
+      expect(cities).not.toEqual(expect.arrayContaining([
+        expect.objectContaining({
+          name: 'NÃO ESPECIFICADA'
+        })
+      ]))
+      expect(cities).not.toEqual(expect.arrayContaining([
+        expect.objectContaining({
+          name: 'NAO ESPECIFICADA'
+        })
+      ]))
       done()
     })
   })
