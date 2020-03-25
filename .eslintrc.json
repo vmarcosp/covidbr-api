@@ -5,7 +5,6 @@
         "jest": true
     },
     "extends": [
-        "plugin:react/recommended",
         "standard"
     ],
     "globals": {
