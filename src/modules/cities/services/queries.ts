@@ -15,3 +15,9 @@ export const findCity = (filter: Option<CityFilterInput>) => {
 
   return CitiesCollection.findOne(query)
 }
+
+export const findCities = (filter: Option<CityFilterInput>) => {
+  const query = createQuery(filter)
+
+  return CitiesCollection.find(query)
+}

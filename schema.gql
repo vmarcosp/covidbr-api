@@ -38,6 +38,7 @@ type Query {
   brazil: Brazil
   states(filter: StateFilterInput): [State!]
   city(filter: CityFilterInput): City
+  cities(filter: CityFilterInput): [City!]
 }
 
 type State {
