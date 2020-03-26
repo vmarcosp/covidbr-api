@@ -110,3 +110,4 @@ dist
 cache.json
 build/*
 *.data.json
+*.gql

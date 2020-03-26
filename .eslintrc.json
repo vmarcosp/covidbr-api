@@ -1,29 +1,38 @@
 {
     "env": {
         "browser": true,
-        "es6": true,
-        "jest": true
+        "es6": true
     },
     "extends": [
         "standard"
     ],
     "globals": {
         "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
+        "SharedArrayBuffer": "readonly",
+        "jest": true
     },
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
     "plugins": [
-        "react",
         "@typescript-eslint"
     ],
-    "rules": {
-        "no-unused-vars": "warn"
-    }
+    "rules": {},
+    "overrides": [
+        {
+            "files": [
+                "*.ts"
+            ],
+            "rules": {
+                "@typescript-eslint/no-unused-vars": [
+                    2,
+                    {
+                        "args": "none"
+                    }
+                ]
+            }
+        }
+    ]
 }
