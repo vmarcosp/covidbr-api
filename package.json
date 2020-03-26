@@ -20,6 +20,7 @@
     "@types/axios": "^0.14.0",
     "@types/cron": "1.7.2",
     "@types/dotenv": "^8.2.0",
+    "@types/jest": "^25.1.4",
     "@types/jsdom": "16.1.0",
     "@types/lokijs": "^1.5.3",
     "@types/module-alias": "^2.0.0",
