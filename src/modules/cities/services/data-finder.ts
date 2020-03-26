@@ -63,7 +63,9 @@ const createCity = ({ city, totalCases, state }: CityCsvRow): City => {
 }
 const treatData = (cityRow: CityCsvRow): boolean => {
   const name = toCityName(cityRow.city)
-  return !['NÃO ESPECIFICADA', 'NAO ESPECIFICADA'].includes(name.toUpperCase())
+  const INVALID_REGEX = /n[aã]o\s+especificada/i
+
+  return INVALID_REGEX.test(name)
 }
 
 export const findAndStoreCities = async () => {
