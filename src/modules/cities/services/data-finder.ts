@@ -65,7 +65,7 @@ const treatData = (cityRow: CityCsvRow): boolean => {
   const name = toCityName(cityRow.city)
   const INVALID_REGEX = /n[aã]o\s+especificada/i
 
-  return INVALID_REGEX.test(name)
+  return !INVALID_REGEX.test(name)
 }
 
 export const findAndStoreCities = async () => {
