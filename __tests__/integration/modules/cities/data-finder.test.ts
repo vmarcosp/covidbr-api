@@ -4,7 +4,7 @@ import MockAdapter from 'axios-mock-adapter'
 import { findAndStoreCities } from '~/modules/cities/services/data-finder'
 import { CitiesCollection } from '~/modules/cities/collection'
 
-import { mockedCsv, mockeCSVCityWithUndefinedCities } from './mocks/data-finder'
+import { mockedCsv, mockCSVCityWithInvalidCitiesName } from './mocks/data-finder'
 
 const mockAxios = new MockAdapter(axios)
 
@@ -53,21 +53,39 @@ describe('[Integration]:: Cities - DataFinder', () => {
       done()
     })
 
-    it('deve buscar e armazenar corretamente as cidades e ignorar as Não identificadas', async done => {
-      mockAxios.onGet(URL).reply(200, mockeCSVCityWithUndefinedCities)
+    it('deve buscar e armazenar corretamente as cidades e ignorar as "NÃO ESPECIFICADA"', async done => {
+      mockAxios.onGet(URL).reply(200, mockCSVCityWithInvalidCitiesName['NÃO ESPECIFICADA'])
       await findAndStoreCities()
 
       const cities = await CitiesCollection.find()
-      expect(cities).not.toEqual(expect.arrayContaining([
-        expect.objectContaining({
-          name: 'NÃO ESPECIFICADA'
-        })
-      ]))
-      expect(cities).not.toEqual(expect.arrayContaining([
-        expect.objectContaining({
-          name: 'NAO ESPECIFICADA'
-        })
-      ]))
+      expect(cities).toEqual([])
+      done()
+    })
+
+    it('deve buscar e armazenar corretamente as cidades e ignorar as "NAO ESPECIFICADA"', async done => {
+      mockAxios.onGet(URL).reply(200, mockCSVCityWithInvalidCitiesName['NAO ESPECIFICADA'])
+      await findAndStoreCities()
+
+      const cities = await CitiesCollection.find()
+      expect(cities).toEqual([])
+      done()
+    })
+
+    it('deve buscar e armazenar corretamente as cidades e ignorar as "não especificada"', async done => {
+      mockAxios.onGet(URL).reply(200, mockCSVCityWithInvalidCitiesName['não especificada'])
+      await findAndStoreCities()
+
+      const cities = await CitiesCollection.find()
+      expect(cities).toEqual([])
+      done()
+    })
+
+    it('deve buscar e armazenar corretamente as cidades e ignorar as "nao especificada"', async done => {
+      mockAxios.onGet(URL).reply(200, mockCSVCityWithInvalidCitiesName['nao especificada'])
+      await findAndStoreCities()
+
+      const cities = await CitiesCollection.find()
+      expect(cities).toEqual([])
       done()
     })
   })
