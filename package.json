@@ -4,7 +4,7 @@
   "main": "src/index.ts",
   "license": "",
   "scripts": {
-    "dev": "NODE_ENV=dev nodemon src/index.ts",
+    "dev": "cross-env NODE_ENV=dev nodemon src/index.ts",
     "build": "tsc --build",
     "start": "node build/index.js",
     "lint": "eslint --fix src/**/*.ts __tests__/**/*.ts",
@@ -47,6 +47,7 @@
     "axios-mock-adapter": "^1.17.0",
     "brazilian-geographic-data": "^1.0.0",
     "cron": "^1.8.2",
+    "cross-env": "^7.0.2",
     "dotenv": "^8.2.0",
     "fp-ts": "^2.5.0",
     "graphql-yoga": "^1.18.3",

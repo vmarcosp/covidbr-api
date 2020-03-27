@@ -31,7 +31,10 @@ em breve.
 
 ## Up and Running
 
+> Renomear o **.env.sample** para **.env** e configurar as portas que você quer usar.
+
 ### Dev
+
 ```sh
 yarn dev # ou npm run dev
 ```
