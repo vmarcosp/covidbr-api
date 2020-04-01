@@ -21,9 +21,9 @@ describe('[Integration]:: Cities - DataFinder', () => {
         expect.objectContaining({
           name: 'São Paulo',
           uf: 'SP',
-          cases: 366,
-          deaths: 0,
-          casesMS: 366,
+          cases: 1885,
+          deaths: 121,
+          casesMS: 1885,
           casesNotConfirmedByMS: 0,
           latitude: -23.5329,
           longitude: -46.6395
@@ -31,9 +31,9 @@ describe('[Integration]:: Cities - DataFinder', () => {
         expect.objectContaining({
           name: 'Barra Mansa',
           uf: 'RJ',
-          cases: 1,
+          cases: 2,
           deaths: 0,
-          casesMS: 1,
+          casesMS: 2,
           casesNotConfirmedByMS: 0,
           latitude: -22.5481,
           longitude: -44.1752
@@ -41,9 +41,9 @@ describe('[Integration]:: Cities - DataFinder', () => {
         expect.objectContaining({
           name: 'Vila Velha',
           uf: 'ES',
-          cases: 17,
+          cases: 35,
           deaths: 0,
-          casesMS: 17,
+          casesMS: 35,
           casesNotConfirmedByMS: 0,
           latitude: -20.3417,
           longitude: -40.2875

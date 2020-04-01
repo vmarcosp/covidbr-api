@@ -1216,6 +1216,11 @@ braces@^3.0.1, braces@~3.0.2:
   dependencies:
     fill-range "^7.0.1"
 
+brazilian-geographic-data@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/brazilian-geographic-data/-/brazilian-geographic-data-1.0.0.tgz#2d14e8924db4a400a85aeee5e7490fff720cd20d"
+  integrity sha512-67NbaybolshDjjQ9Mzl1EKVUrgcPVNkj+kUuiuNlulAkuMrnBntmIrulcHRyps3tlHzRE5x90r551C2iXboMDA==
+
 browser-process-hrtime@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/browser-process-hrtime/-/browser-process-hrtime-1.0.0.tgz#3c9b4b7d782c8121e56f10106d84c0d0ffc94626"

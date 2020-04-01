@@ -4,6 +4,7 @@ import uuid from 'uuid/v4'
 
 import { logger } from '~/common/logger'
 import { db } from '~/config/database'
+
 import data from '../cities-geolocation.json'
 
 import { City } from '../typeDefs/City'
@@ -20,6 +21,7 @@ interface CityCsvRow {
   country: string
   state: string
   city: string
+  deaths: string
   totalCases: string
 }
 
@@ -45,7 +47,7 @@ const getCityInfo = (cityName: string, uf: string) => {
   }
 }
 
-const createCity = ({ city, totalCases, state }: CityCsvRow): City => {
+const createCity = ({ city, deaths, totalCases, state }: CityCsvRow): City => {
   const name = toCityName(city)
   const { latitude, longitude } = getCityInfo(name, state)
 
@@ -53,9 +55,9 @@ const createCity = ({ city, totalCases, state }: CityCsvRow): City => {
     id: uuid(),
     cases: parseInt(totalCases),
     casesMS: parseInt(totalCases),
+    deaths: parseInt(deaths),
     uf: state,
     name,
-    deaths: 0,
     casesNotConfirmedByMS: 0,
     latitude,
     longitude
