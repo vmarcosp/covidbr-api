@@ -1,6 +1,6 @@
 import axios from 'axios'
 import Papa from 'papaparse'
-import uuid from 'uuid/v4'
+import { v4 as uuid } from 'uuid'
 
 import { logger } from '~/common/logger'
 import { db } from '~/config/database'
