@@ -31,24 +31,21 @@ em breve.
 
 ## Up and Running
 
-> Renomear o **.env.sample** para **.env** e configurar as portas que você quer usar.
+### Configurações
+- Criar uma cópia do arquivo `.env.sample` e renomea-lo para `.env`
+- Alterar o valor de `PORT` para a porta que você deseja rodar a aplicação
 
-### Dev
-
+### Rodando a API
+Abra o o terminal na pasta do projeto e rode o comando abaixo:
 ```sh
 yarn dev # ou npm run dev
 ```
-
-### Production
-```sh
-yarn build # ou npm run build
-```
-
 ## Agradecimentos
 
 Esse projeto só foi possível graças as pessoas citadas abaixo:
 - [Wesley Costa](https://github.com/wcota) - Por fornecer os dados municipais e estaduais
 - [Iago Laguna](https://github/iagolaguna) - Contribiu no desenvolvimento dessa API
+- [Leonardo Habitzreuter](https://github.com/leonardohabitzreuter) - Contribiu no desenvolvimento da API
 - [Rebecca Gonzalez](https://dribbble.com/rebeccagonzalez) - Desenvolveu todo design do aplicativo web
 - Grupo de Tratamento de Dados do COVID-19 no Telegram - Que mantém os dados atualizados diariamente, independente da plataforma IVIS do Ministério da Saúde
 
