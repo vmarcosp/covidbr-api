@@ -5,13 +5,13 @@ export const getData = (document: Document) => {
   const rows = document.querySelectorAll(COUNTRIES)
 
   const brazilRow = Array.from(rows).find(row => {
-    const countryName = row.querySelector('td')?.textContent
-    return countryName === 'Brazil'
+    const [, countryCell] = Array.from(row.querySelectorAll('td'))
+    return countryCell?.textContent === 'Brazil'
   })
 
   if (!brazilRow) throw new Error('Internal error')
 
-  const [, $totalCases, , $totalDeaths, , $totalRecovered, $activeCases] = Array.from(brazilRow.querySelectorAll('td'))
+  const [, , $totalCases, , $totalDeaths, , $totalRecovered, $activeCases] = Array.from(brazilRow.querySelectorAll('td'))
 
   const totalDeaths = formatCounter($totalDeaths)
   const totalRecovered = formatCounter($totalRecovered)

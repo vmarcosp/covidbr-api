@@ -15,10 +15,10 @@ describe('[Unit]:: Global', () => {
       closedCases
     } = BrazilCrawler.getData(document)
 
-    expect(totalCases).toBe(529)
-    expect(totalDeaths).toBe(4)
-    expect(totalRecovered).toBe(2)
-    expect(activeCases).toBe(523)
-    expect(closedCases).toBe(6)
+    expect(totalCases).toBe(275087)
+    expect(totalDeaths).toBe(18121)
+    expect(totalRecovered).toBe(106794)
+    expect(activeCases).toBe(150172)
+    expect(closedCases).toBe(124915)
   })
 })
