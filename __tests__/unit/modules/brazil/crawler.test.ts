@@ -4,7 +4,7 @@ import { fromMockFile } from '../../../helpers/mock-crawler'
 
 const pagePath = path.join(__dirname, 'mocks', 'page.html')
 
-describe('[Unit]:: Global', () => {
+describe('[Unit]:: Brazil', () => {
   it('deve retornar os dados do Brazil corretamente', () => {
     const { document } = fromMockFile(pagePath)
     const {
@@ -15,10 +15,10 @@ describe('[Unit]:: Global', () => {
       closedCases
     } = BrazilCrawler.getData(document)
 
-    expect(totalCases).toBe(275087)
-    expect(totalDeaths).toBe(18121)
-    expect(totalRecovered).toBe(106794)
-    expect(activeCases).toBe(150172)
-    expect(closedCases).toBe(124915)
+    expect(totalCases).toBe(529405)
+    expect(totalDeaths).toBe(30046)
+    expect(totalRecovered).toBe(211080)
+    expect(activeCases).toBe(288279)
+    expect(closedCases).toBe(241126)
   })
 })
