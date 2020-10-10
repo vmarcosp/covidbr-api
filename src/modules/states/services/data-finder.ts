@@ -19,8 +19,8 @@ export const getStatesData = async (): Promise<State[]> => {
   const [, ...dataWithoutTotal] = data
 
   return dataWithoutTotal
-    .map((stateData: StateDataCsv) => {
-      const { state, totalCases, totalCasesMS, notConfirmedByMS, deaths } = stateData
+    .map((stateData) => {
+      const { state, totalCases, totalCasesMS, notConfirmedByMS, deaths } = <StateDataCsv> stateData
       const uf = state.toUpperCase()
       const { name, latitude, longitude } = states[uf]
       return {

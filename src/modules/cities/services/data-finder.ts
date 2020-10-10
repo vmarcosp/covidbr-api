@@ -45,7 +45,8 @@ const getCityInfo = (cityName: string, uf: string) => {
   }
 }
 
-const createCity = ({ city, totalCases, state }: CityCsvRow): City => {
+const createCity = (cityCsvRow: any): City => {
+  const { city, totalCases, state } = <CityCsvRow> cityCsvRow
   const name = toCityName(city)
   const { latitude, longitude } = getCityInfo(name, state)
 
@@ -61,8 +62,9 @@ const createCity = ({ city, totalCases, state }: CityCsvRow): City => {
     longitude
   }
 }
-const treatData = (cityRow: CityCsvRow): boolean => {
-  const name = toCityName(cityRow.city)
+const treatData = (cityRow: any): boolean => {
+  const cityRowCsv = <CityCsvRow> cityRow
+  const name = toCityName(cityRowCsv.city)
   const INVALID_REGEX = /n[aã]o\s+especificada/i
 
   return !INVALID_REGEX.test(name)
