@@ -12,6 +12,7 @@
   <br />
   <br />
 </div>
+  <p align="center"><a href="./readme-en.md">Em Inglês ➤</a></p>
 
 ## Descrição
 API de tracking dos casos de corona vírus no Brasil
