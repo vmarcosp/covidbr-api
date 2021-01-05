@@ -44,7 +44,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "axios-mock-adapter": "^1.17.0",
     "brazilian-geographic-data": "^1.0.0",
     "cron": "^1.8.2",
